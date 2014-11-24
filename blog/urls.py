@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from appblog.views import IndexView
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'blog.views.home', name='home'),
@@ -8,4 +10,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^markdown/', include('django_markdown.urls')),
+
+    url(r'^$', IndexView.as_view()),
 )
