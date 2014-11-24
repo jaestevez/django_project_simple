@@ -7,7 +7,7 @@ class Entrada(models.Model):
 
 	titulo = models.CharField(max_length=200)
 	contenido = models.TextField()
-	slug = models.SlugField()
+	slug = models.SlugField(editable=False)
 
 	def __unicode__(self):
 		return self.titulo
