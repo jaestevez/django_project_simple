@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from appblog.views import IndexView
+from appblog.views import IndexView, EntradaDetailView
 
 urlpatterns = patterns('',
     # Examples:
@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^markdown/', include('django_markdown.urls')),
 
     url(r'^$', IndexView.as_view()),
+    url(r'^entrada/(?P<slug>[-\w]+)/$', EntradaDetailView.as_view()),
 )
